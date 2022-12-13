@@ -19,7 +19,7 @@ variable "key_pair_name" {
 
 }
 
-resource "aws_security_group" "ec2_sg" {
+resource "aws_security_group" "jsgi" {
   name        = join("", [var.name, "-", "jsgi"])
   description = "Allow  traffic for http and ssh"
 
