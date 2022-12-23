@@ -19,8 +19,8 @@ variable "key_pair_name" {
 
 }
 
-resource "aws_security_group" "jsgi" {
-  name        = join("", [var.name, "-", "jsgi"])
+resource "aws_security_group" "webserversg" {
+  name        = join("", [var.name, "-", "webserversg"])
   description = "Allow  traffic for http and ssh"
 
 
@@ -64,7 +64,7 @@ resource "aws_instance" "web_server" {
   ami                    = "ami-0b0dcb5067f052a63"
   instance_type          = "t3.small"
   key_name               = var.key_pair_name
-  vpc_security_group_ids = [aws_security_group.jsgi.id]
+  vpc_security_group_ids = [aws_security_group.webserversg.id]
   user_data              = file("scripts/userdata.sh")
   iam_instance_profile   = aws_iam_instance_profile.instance_profile.name
   tags                   = merge(var.tags, { Name = join("", [var.name, "-", "webserver"]) }, { Environment = var.name })
