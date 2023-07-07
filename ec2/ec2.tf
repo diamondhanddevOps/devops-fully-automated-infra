@@ -19,8 +19,8 @@ variable "key_pair_name" {
 
 }
 
-resource "aws_security_group" "webserversg" {
-  name        = join("", [var.name, "-", "webserversg"])
+resource "aws_security_group" "Vera-Security-Group" {
+  name        = join("", [var.name, "-", "Vera-Security-Group"])
   description = "Allow  traffic for http and ssh"
 
 
@@ -61,10 +61,10 @@ resource "aws_iam_instance_profile" "instance_profile" {
 
 
 resource "aws_instance" "web_server" {
-  ami                    = "ami-0b0dcb5067f052a63"
-  instance_type          = "t3.small"
+  ami                    = "ami-053b0d53c279acc90"
+  instance_type          = "t3.large"
   key_name               = var.key_pair_name
-  vpc_security_group_ids = [aws_security_group.webserversg.id]
+  vpc_security_group_ids = [aws_security_group.Vera-Security-Group.id]
   user_data              = file("scripts/userdata.sh")
   iam_instance_profile   = aws_iam_instance_profile.instance_profile.name
   tags                   = merge(var.tags, { Name = join("", [var.name, "-", "webserver"]) }, { Environment = var.name })
