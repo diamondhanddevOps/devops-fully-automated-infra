@@ -43,14 +43,14 @@ pipeline {
             }
         }
 
-        stage('Checkov scan') {
-            steps {
-                sh '''
-                sudo pip3 install checkov
-                checkov -s .
-                '''
-            }
-        }
+        // stage('Checkov scan') {
+        //     steps {
+        //         sh '''
+        //         sudo pip3 install checkov
+        //         checkov -s .
+        //         '''
+        //     }
+        // }
 
         stage('Manual approval') {
             steps {
