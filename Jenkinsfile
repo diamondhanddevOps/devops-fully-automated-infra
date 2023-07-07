@@ -73,3 +73,10 @@ pipeline {
         }
     }
 }
+ stage('Terraform destroy') {
+            steps {
+                echo 'Destroying infrastructure...'
+                sh 'terraform destroy --auto-approve'
+      }
+   }
+}
