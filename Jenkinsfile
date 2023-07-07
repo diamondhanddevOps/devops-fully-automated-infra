@@ -47,7 +47,7 @@ pipeline {
             steps {
                 sh '''
                 sudo pip3 install checkov
-                checkov -d .
+                checkov -s .
                 '''
             }
         }
