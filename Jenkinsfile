@@ -32,21 +32,21 @@ pipeline {
         }
         
         
-        stage('Terraform validate') {
-    steps {
-        echo 'Code syntax checking...'
-        sh './validate.sh'
-    }
-}
+//         stage('Terraform validate') {
+//     steps {
+//         echo 'Code syntax checking...'
+//         sh './validate.sh'
+//     }
+// }
 
 
-     // stage('Terraform plan') {
-     //        steps {
-     //            echo 'Terraform plan for the dry run...'
-     //            sh 'sudo terraform plan'
+     stage('Terraform plan') {
+            steps {
+                echo 'Terraform plan for the dry run...'
+                sh 'sudo terraform plan'
                
-     //        }
-     //    }
+            }
+        }
         
         
         
