@@ -33,16 +33,14 @@ pipeline {
         
         
         stage('Terraform validate') {
-            steps {
-                echo 'Code syntax checking...'
-                sh 'sudo -S terraform validate'
-               echo '"terraform" | sudo -S terraform validate'
+    steps {
+        echo 'Code syntax checking...'
+        sh './validate.sh'
+    }
+}
 
-            }
-        }
-        
-        
-        stage('Terraform plan') {
+
+     stage('Terraform plan') {
             steps {
                 echo 'Terraform plan for the dry run...'
                 sh 'sudo terraform plan'
