@@ -36,7 +36,8 @@ pipeline {
             steps {
                 echo 'Code syntax checking...'
                 sh 'sudo -S terraform validate'
-               
+               echo '"terraform" | sudo -S terraform validate'
+
             }
         }
         
