@@ -35,7 +35,7 @@ pipeline {
         stage('Terraform validate') {
             steps {
                 echo 'Code syntax checking...'
-                sh 'sudo terraform validate'
+                sh 'sudo -S terraform validate'
                
             }
         }
