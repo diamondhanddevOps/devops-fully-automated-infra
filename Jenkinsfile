@@ -40,13 +40,13 @@ pipeline {
 }
 
 
-     stage('Terraform plan') {
-            steps {
-                echo 'Terraform plan for the dry run...'
-                sh 'sudo terraform plan'
+     // stage('Terraform plan') {
+     //        steps {
+     //            echo 'Terraform plan for the dry run...'
+     //            sh 'sudo terraform plan'
                
-            }
-        }
+     //        }
+     //    }
         
         
         
