@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "jenkins-password" | sudo -S terraform validate
-chmod +x validate.sh
+sudo chmod +x validate.sh
